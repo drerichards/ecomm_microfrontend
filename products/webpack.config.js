@@ -14,9 +14,9 @@ module.exports = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'products',
-            filename: 'remoteEntry.js',
-            exposes: {
+            name: 'products', // name chosen must match what is in container fed module
+            filename: 'remoteEntry.js', // name of the manifest file. standard name => 'remoteEntry'
+            exposes: { // which files/modules in the products directory to expose to the outside world when exported as aliases
                 './ProductsIndex': './src/index'
             }
         }),

@@ -10,7 +10,8 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'container', // added for clarity and needed for 'remotes'
             remotes: { // lists projects that the container can search to get addl code
-                products: 'products@http://localhost:8081/remoteEntry.js' //load file at this URL if container has an import stmt `import abc from 'products'`
+                products: 'products@http://localhost:8081/remoteEntry.js', //load file at this URL if container has an import stmt `import abc from 'products'`
+                cart: 'cart@http://localhost:8082/remoteEntry.js'
             }
         }),
         new HtmlWebpackPlugin({
