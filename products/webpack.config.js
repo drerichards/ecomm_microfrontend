@@ -17,8 +17,9 @@ module.exports = {
             name: 'products', // name chosen must match what is in container fed module
             filename: 'remoteEntry.js', // name of the manifest file. standard name => 'remoteEntry'
             exposes: { // which files/modules in the products directory to expose to the outside world when exported as aliases
-                './ProductsIndex': './src/index'
-            }
+                './ProductsIndex': './src/bootstrap'
+            },
+            shared: ['faker'] // checks if pkg has been loaded by another module and shares it vs downloading multiple copies
         }),
         new HtmlWebpackPlugin({
             template: './public/index.html'

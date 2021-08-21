@@ -1,1 +1,1 @@
-import('./bootstrap')
+import('./bootstrap') // loads bootstrap file async so all imports may not be avail when using ['shared'] config
